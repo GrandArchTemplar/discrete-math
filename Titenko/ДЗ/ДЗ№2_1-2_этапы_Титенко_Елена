@@ -1,0 +1,401 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Дискретная математика ДЗ 2 Титенко Елена К3220.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyPpeocrG0uJgsvIwSlkpeUx",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/oxxawsm/discrete-math/blob/main/%D0%94%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0_%D0%94%D0%97_2_%D0%A2%D0%B8%D1%82%D0%B5%D0%BD%D0%BA%D0%BE_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%9A3220.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Калькулятор множеств\n"
+      ],
+      "metadata": {
+        "id": "2dCBhSCq4y1-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JNcBEGT7yyoj"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "\n",
+        "---\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "NZCImeAT8eUi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 1 этап"
+      ],
+      "metadata": {
+        "id": "K4FkMh7p-yBT"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**❗Для работы калькулятора следует запустить функции из раздела \"Функции для этапа 1\" ниже❗**\n",
+        "\n",
+        "*Формат ввода данных:*\n",
+        "\n",
+        "-> 1-е множество\n",
+        "\n",
+        "-> 2-е множество\n",
+        "\n",
+        "<...>\n",
+        "\n",
+        "-> арифметическая операция (u - объединение, i - пересечение, s - вычитание, a - дополнение)\n",
+        "\n",
+        "\n",
+        "*Другое*\n",
+        "\n",
+        "пустое множество - нажать enter"
+      ],
+      "metadata": {
+        "id": "gvg2s1A68R7x"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "calculator()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9DgMRuKyFkQU",
+        "outputId": "451921b8-8af8-4b76-fafa-e87ab52c4ca1"
+      },
+      "execution_count": 164,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 2 3\n",
+            "4 5\n",
+            "u\n",
+            "['1', '2', '3', '4', '5']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "calculator()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KYnNY6Q6WHf0",
+        "outputId": "20efbe24-798c-4977-d2f9-1941f91dcab0"
+      },
+      "execution_count": 156,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 2 3 4 5\n",
+            "4 5\n",
+            "i\n",
+            "['4', '5']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "calculator()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lSO43BNzhp14",
+        "outputId": "1cfe2cb7-784f-445b-ea93-6ac00eb4687a"
+      },
+      "execution_count": 157,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 2 3 4 5\n",
+            "4 5\n",
+            "s\n",
+            "['1', '2', '3']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "calculator()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mQiAQCx7hulS",
+        "outputId": "130899ce-146f-4215-e3a4-73acba4a3320"
+      },
+      "execution_count": 158,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 2 3\n",
+            "1 2 3 4 5 6 7 8 9\n",
+            "a\n",
+            "['4', '5', '6', '7', '8', '9']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Функции для этапа 1"
+      ],
+      "metadata": {
+        "id": "OGBh4236HR7A"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Объединятор"
+      ],
+      "metadata": {
+        "id": "Wu1l6IoC5VEg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Unity(set1, set2):\n",
+        "  result = set1.union(set2)\n",
+        "\n",
+        "  return result"
+      ],
+      "metadata": {
+        "id": "ypfkA6W350IR"
+      },
+      "execution_count": 135,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Пересекатор\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "Ac3TYwcC6osq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Intersection(set1, set2):\n",
+        "  result = set1 & set2\n",
+        "\n",
+        "  return result"
+      ],
+      "metadata": {
+        "id": "hQH80EIY6dFJ"
+      },
+      "execution_count": 136,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Вычитатор"
+      ],
+      "metadata": {
+        "id": "r6iZIaCP8ofH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Minus(set1, set2):\n",
+        "  result = set1 - set2\n",
+        "\n",
+        "  return result"
+      ],
+      "metadata": {
+        "id": "fCVygwAU8si7"
+      },
+      "execution_count": 137,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Дополнятор множества А до множества В"
+      ],
+      "metadata": {
+        "id": "KvDWr27-ERI5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Add(set1, set2):\n",
+        "  result = set1 ^ set2\n",
+        "  return result"
+      ],
+      "metadata": {
+        "id": "Z71jsEMcEv_A"
+      },
+      "execution_count": 138,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Непосредственно функция калькулятора"
+      ],
+      "metadata": {
+        "id": "EZcfd0NqEWXJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calculator():\n",
+        "  mnozh1 = set(input().split(' '))\n",
+        "  mnozh2 = set(input().split(' '))\n",
+        "  operand = input()\n",
+        "  \n",
+        "  if operand == 'u':\n",
+        "    answer = Unity(mnozh1, mnozh2)\n",
+        "  elif operand == 'i':\n",
+        "    answer = Intersection(mnozh1, mnozh2)\n",
+        "  elif operand == 's':\n",
+        "    answer = Minus(mnozh1, mnozh2)\n",
+        "  elif operand == 'a':\n",
+        "    answer = Add(mnozh1, mnozh2)\n",
+        "  else:\n",
+        "    print('не могу посчитать :(')\n",
+        "  \n",
+        "  print(sorted(answer))"
+      ],
+      "metadata": {
+        "id": "ZpVuDVlfBIDu"
+      },
+      "execution_count": 163,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 2 этап"
+      ],
+      "metadata": {
+        "id": "0OsQU5yAMrPW"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Генератор булеанов числового множества"
+      ],
+      "metadata": {
+        "id": "IuMJbGCGinCr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Subsets(A):\n",
+        "  sub_A = [[ ]]\n",
+        "  for i in A:\n",
+        "    sub_A += [s + [i] for s in sub_A]\n",
+        "  return sub_A\n",
+        "\n",
+        "A = set(input().split(' '))\n",
+        "mn = Subsets(A)\n",
+        "for s in mn:\n",
+        "  if len(s):\n",
+        "    print(set(s))\n",
+        "  else:\n",
+        "    print(\"{}\")\n",
+        "\n",
+        "    "
+      ],
+      "metadata": {
+        "id": "0IaE--cXIkgl",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c3af6a98-9328-470e-e4dc-6344fd709e06"
+      },
+      "execution_count": 179,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 7 4\n",
+            "{}\n",
+            "{'4'}\n",
+            "{'7'}\n",
+            "{'4', '7'}\n",
+            "{'1'}\n",
+            "{'4', '1'}\n",
+            "{'7', '1'}\n",
+            "{'4', '7', '1'}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
