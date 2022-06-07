@@ -1,14 +1,14 @@
 import sys
 
 
-def minimumCostSimplePath(u, destination, visited, graph):
+def dfs(u, destination, visited, graph):
     if (u == destination):
         return 0
     visited[u] = 1
     ans = INF
     for i in range(V):
         if (graph[u][i] != INF and not visited[i]):
-            curr = minimumCostSimplePath(i, destination, visited, graph)
+            curr = dfs(i, destination, visited, graph)
 
             if (curr < INF):
                 ans = min(ans, graph[u][i] + curr)
@@ -32,4 +32,4 @@ if __name__ == "__main__":
         graph[a][b] = c
 
     for dest in range(1, n + 1):
-        print(minimumCostSimplePath(source, dest, visited, graph), end=' ')
+        print(dfs(source, dest, visited, graph), end=' ')
